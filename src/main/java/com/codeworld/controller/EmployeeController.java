@@ -23,9 +23,7 @@ public class EmployeeController {
         List<Employee> employees = employeeService.getAllEmployees();
         if(employees.size() <= 0) {
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }else
-
-        {
+        }else{
            return ResponseEntity.of(Optional.of(employees)) ;
         }
     }
