@@ -1,13 +1,15 @@
-package com.ajtech.controller;
+package com.codeworld.controller;
 
-import com.ajtech.entity.Employee;
-import com.ajtech.service.EmployeeService;
+import com.codeworld.entity.Employee;
+import com.codeworld.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/employees")
@@ -19,14 +21,24 @@ public class EmployeeController {
     @GetMapping
     public ResponseEntity<List<Employee>> getAllEmployees() {
         List<Employee> employees = employeeService.getAllEmployees();
-        return ResponseEntity.ok(employees);
+        if(employees.size() <= 0) {
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }else
+
+        {
+           return ResponseEntity.of(Optional.of(employees)) ;
+        }
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Integer id) {
         Employee employee = employeeService.getEmployeeById(id);
-        return ResponseEntity.ok(employee);
+        if(employee == null)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        else
+            return ResponseEntity.of (Optional.of(employee));
     }
+
 
     @PostMapping
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {

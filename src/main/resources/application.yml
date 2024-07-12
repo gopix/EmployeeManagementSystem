@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: EmployeeManagementApplication
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/gopworld
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
+server:
+  port: 9090

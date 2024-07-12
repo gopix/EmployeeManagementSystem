@@ -1,8 +1,8 @@
-package com.ajtech.service;
-import com.ajtech.entity.Employee;
-import com.ajtech.exception.EmployeeBadRequestException;
-import com.ajtech.exception.EmployeeNotFoundException;
-import com.ajtech.repo.EmployeeRepository;
+package com.codeworld.service;
+import com.codeworld.entity.Employee;
+import com.codeworld.exception.EmployeeBadRequestException;
+import com.codeworld.exception.EmployeeNotFoundException;
+import com.codeworld.repo.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

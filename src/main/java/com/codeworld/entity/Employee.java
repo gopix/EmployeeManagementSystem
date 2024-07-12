@@ -1,4 +1,4 @@
-package com.ajtech.entity;
+package com.codeworld.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

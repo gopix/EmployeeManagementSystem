@@ -1,4 +1,4 @@
-package com.ajtech.exception;
+package com.codeworld.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.ajtech.exception;
+package com.codeworld.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
